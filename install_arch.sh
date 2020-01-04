@@ -21,13 +21,13 @@ echo '2.4 создание разделов'
   echo;
   echo;
   echo;
-  echo +5G;
+  echo +4G;
 
   echo n;
   echo;
   echo;
   echo;
-  echo +1024M;
+  echo +2G;
 
   echo n;
   echo p;
@@ -59,7 +59,7 @@ echo '3.1 Выбор зеркал для загрузки. Ставим зерк
 echo "Server = http://archlinux.mirror.wearetriple.com/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
 
 echo '3.2 Установка основных пакетов'
-pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd netctl
+pacstrap /mnt base base-devel linux linux-firmware linux-headers nano dhcpcd netctl
 
 echo '3.3 Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab
