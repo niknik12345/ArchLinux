@@ -56,7 +56,7 @@ swapon /dev/sda3
 mount /dev/sda4 /mnt/home
 
 echo '3.1 Выбор зеркал для загрузки. Ставим зеркало от Нидерланды'
-echo "Server = http://archlinux.mirror.wearetriple.com/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
+echo "Server = http://ftp.nluug.nl/os/Linux/distr/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
 
 echo '3.2 Установка основных пакетов'
 pacstrap /mnt base base-devel linux linux-firmware linux-headers nano dhcpcd netctl
