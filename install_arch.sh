@@ -4,7 +4,6 @@ loadkeys ru
 setfont cyr-sun16
 echo 'Скрипт по Установке ArchLinux'
 echo 'Ссылка'
-
 echo '2.3 Синхронизация системных часов'
 timedatectl set-ntp true
 
