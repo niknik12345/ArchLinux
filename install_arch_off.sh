@@ -1,4 +1,3 @@
-loadkeys ru
 
 ls /sys/firmware/efi/efivars
 
@@ -6,7 +5,37 @@ timedatectl set-ntp true
 
 fdisk -l
 
-cfdisk
+echo '2.4 создание разделов'
+(
+ echo g;
+
+ echo n;
+ echo ;
+ echo;
+ echo +300M;
+ echo y;
+ echo t;
+ echo 1;
+
+ echo n;
+ echo;
+ echo;
+ echo +2G;
+ echo y;
+ 
+  
+ echo n;
+ echo;
+ echo;
+ echo;
+ echo y;
+  
+ echo w;
+) 
+
+
+
+#cfdisk
 
 mkfs.ext4 /dev/sda3
 mkfs.fat -F32 /dev/sda1
@@ -24,7 +53,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt
 
-ln -sf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime
+ln -sf /usr/share/zoneinfo/Europe/Kiev pacman /etc/localtime
 
 hwclock --systohc
 
