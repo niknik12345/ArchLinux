@@ -22,12 +22,14 @@ fdisk -l
 echo '2.4.2 Форматирование дисков'
 
 mkfs.fat -F32 /dev/sda1
+mkswap /dev/sda2 -L swap
 mkfs.ext4  /dev/sda3
 
 echo '2.4.3 Монтирование дисков'
 mount /dev/sda3 /mnt
 mkdir -p /mnt/boot/efi
 mount /dev/sda1 /mnt/boot/efi
+swapon /dev/sda2
 
 echo '3.1 Выбор зеркал для загрузки.'
 rm -rf /etc/pacman.d/mirrorlist
