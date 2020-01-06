@@ -9,6 +9,8 @@ git.io/install_arch2.sh
 
 git.io/install_arch3.sh
 
+
+https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)  
 Востановление загрузчика  
 Чтобы вывести список текущих загрузочных записей -  
 Shell> bcfg boot dump -v
