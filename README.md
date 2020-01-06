@@ -23,3 +23,5 @@ Shell> bcfg boot add 3 fs0:\EFI\arch\grubx64.efi "Arch Linux (GRUB2)"
 Shell> fs0:  
 FS0:\> cd \efi\grub  
 FS0:\efi\grub\> edit grub.cfg  
+
+образец из https://docs.google.com/document/d/1IsTwkhYvYde9y3zTD1EscqockzdtdUYcItnAglYfZdU/edit#heading=h.dwb51nwq1lzd
