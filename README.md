@@ -9,6 +9,7 @@ git.io/install_arch2.sh
 
 git.io/install_arch3.sh
 
+Востановление загрузчика  
 Чтобы вывести список текущих загрузочных записей -  
 Shell> bcfg boot dump -v
 
