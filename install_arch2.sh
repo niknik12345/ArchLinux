@@ -4,7 +4,7 @@ read -p "Введите имя пользователя: " username
 
 echo 'Прописываем имя компьютера'
 echo $hostname > /etc/hostname
-ln -svf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime
+ln -svf /usr/share/zoneinfo/Europe/Kiev /etc/localtime
 
 echo '3.4 Добавляем русскую локаль системы'
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
@@ -72,5 +72,5 @@ systemctl enable NetworkManager
 
 echo 'Установка завершена! Перезагрузите систему.'
 echo 'Если хотите подключить AUR, установить мои конфиги XFCE, тогда после перезагрзки и входа в систему, установите wget (sudo pacman -S wget) и выполните команду:'
-echo 'wget git.io/archuefi3.sh && sh archuefi3.sh'
+echo 'wget git.io/install_arch3.sh && sh install_archu3.sh'
 exit
