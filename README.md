@@ -1,5 +1,5 @@
 # ArchLinux
-Скрипт_инстал
+Скрипт_инстал  за основу взят https://github.com/ordanax
 
 curl -i https://git.io -F "url=https://raw.githubusercontent.com/niknik12345/ArchLinux/master/arch_off.sh" -F "code=arch_off.sh"
 
