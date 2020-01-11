@@ -14,22 +14,22 @@ echo '1-й efi 200-500M'
 echo '2-й swap 4-8G'
 echo '3-й root для Linux'
 
-cfdisk
+cfdisk /dev/sdb
 
 echo 'Ваша разметка диска'
 fdisk -l
 
 echo '2.4.2 Форматирование дисков'
 
-mkfs.fat -F32 /dev/sda1
-mkswap /dev/sda2 -L swap
-mkfs.ext4  /dev/sda3
+mkfs.fat -F32 /dev/sdb1
+mkswap /dev/sdb2 -L swap
+mkfs.ext4  /dev/sdb3
 
 echo '2.4.3 Монтирование дисков'
-mount /dev/sda3 /mnt
+mount /dev/sdb3 /mnt
 mkdir -p /mnt/boot/efi
-mount /dev/sda1 /mnt/boot/efi
-swapon /dev/sda2
+mount /dev/sdb1 /mnt/boot/efi
+swapon /dev/sdb2
 
 echo '3.1 Выбор зеркал для загрузки.'
 rm -rf /etc/pacman.d/mirrorlist
