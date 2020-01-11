@@ -9,27 +9,27 @@ echo 'Скрипт по Установке ArchLinux'
 echo '2.3 Синхронизация системных часов'
 timedatectl set-ntp true
 
-echo 'Создайте 3-и раздела'
-echo '1-й efi 200-500M'
-echo '2-й swap 4-8G'
-echo '3-й root для Linux'
+#echo 'Создайте 3-и раздела'
+#echo '1-й efi 200-500M'
+#echo '2-й swap 4-8G'
+#echo '3-й root для Linux'
 
-cfdisk /dev/sda
+#cfdisk /dev/sda
 
-echo 'Ваша разметка диска'
-fdisk -l
+#echo 'Ваша разметка диска'
+#fdisk -l
 
-echo '2.4.2 Форматирование дисков'
+#echo '2.4.2 Форматирование дисков'
 
-mkfs.fat -F32 /dev/sda1
-mkswap /dev/sda2 -L swap
-mkfs.ext4  /dev/sda3
+#mkfs.fat -F32 /dev/sda1
+#mkswap /dev/sda1 -L swap
+#mkfs.ext4  /dev/sda2
 
-echo '2.4.3 Монтирование дисков'
-mount /dev/sda3 /mnt
-mkdir -p /mnt/boot/efi
-mount /dev/sda1 /mnt/boot/efi
-swapon /dev/sda2
+#echo '2.4.3 Монтирование дисков'
+#mount /dev/sda2 /mnt
+#mkdir -p /mnt/boot/efi
+#mount /dev/sdb1 /mnt/boot/efi
+#swapon /dev/sda1
 
 echo '3.1 Выбор зеркал для загрузки.'
 rm -rf /etc/pacman.d/mirrorlist
