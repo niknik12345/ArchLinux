@@ -24,12 +24,42 @@ timedatectl set-ntp true
 #mkfs.fat -F32 /dev/sda1
 #mkswap /dev/sda1 -L swap
 #mkfs.ext4  /dev/sda2
+echo '2.4 создание разделов'
+(
+  echo o;
 
-#echo '2.4.3 Монтирование дисков'
-#mount /dev/sda2 /mnt
-#mkdir -p /mnt/boot/efi
-#mount /dev/sdb1 /mnt/boot/efi
-#swapon /dev/sda1
+  echo n;
+  echo;
+  echo;
+  echo;
+  echo +100M;
+
+  echo n;
+  echo;
+  echo;
+  echo;
+  echo +10G;
+
+  echo n;
+  echo p;
+  echo;
+  echo;
+  echo a;
+  echo 1;
+
+  echo w;
+) | fdisk /dev/sda
+
+echo '2.4.2 Форматирование дисков'
+mkfs.ext2  /dev/sda1 -L boot
+mkfs.ext4  /dev/sda2 -L root
+mkswap /dev/sda3 -L swap
+
+echo '2.4.3 Монтирование дисков'
+mount /dev/sda2 /mnt
+mkdir /mnt/{boot,home}
+mount /dev/sda1 /mnt/boot
+swapon /dev/sda3
 
 echo '3.1 Выбор зеркал для загрузки.'
 rm -rf /etc/pacman.d/mirrorlist
