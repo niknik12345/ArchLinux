@@ -27,14 +27,14 @@ timedatectl set-ntp true
 echo 'создайте 3 раздела 1-boot/2-root/3-swap'
 
 echo '2.4.2 Форматирование дисков'
-mkfs.ext2  /dev/sda1 -L boot
+#mkfs.ext2  /dev/sda1 -L boot
 mkfs.ext4  /dev/sda2 -L root
 mkswap /dev/sda3 -L swap
 
 echo '2.4.3 Монтирование дисков'
 mount /dev/sda2 /mnt
 mkdir /mnt/boot
-mount /dev/sda1 /mnt/boot
+#mount /dev/sda1 /mnt/boot
 swapon /dev/sda3
 
 echo '3.1 Выбор зеркал для загрузки.'
