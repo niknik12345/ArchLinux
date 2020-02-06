@@ -70,6 +70,6 @@ echo '3.2 Установка основных пакетов'
 pacstrap /mnt base linux linux-firmware nano dhcpcd netctl
 
 echo '3.3 Настройка системы'
-genfstab -pU /mnt >> /mnt/etc/fstab
+genfstab -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt sh -c "$(curl -fsSL git.io/install_arch2.sh)"
