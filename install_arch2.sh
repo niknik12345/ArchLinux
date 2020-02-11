@@ -20,16 +20,16 @@ echo 'Вписываем KEYMAP=ru FONT=cyr-sun16'
 echo 'KEYMAP=ru' >> /etc/vconsole.conf
 echo 'FONT=cyr-sun16' >> /etc/vconsole.conf
 
-echo 'Создадим загрузочный RAM диск'
-mkinitcpio -p linux
+#echo 'Создадим загрузочный RAM диск'
+#mkinitcpio -p linux
 
-echo '3.5 Устанавливаем загрузчик'
-pacman -Syy
-pacman -S grub --noconfirm 
-grub-install /dev/sda
+#echo '3.5 Устанавливаем загрузчик'
+#pacman -Syy
+#pacman -S grub --noconfirm 
+#grub-install /dev/sda
 
-echo 'Обновляем grub.cfg'
-grub-mkconfig -o /boot/grub/grub.cfg
+#echo 'Обновляем grub.cfg'
+#grub-mkconfig -o /boot/grub/grub.cfg
 
 echo 'Ставим программу для Wi-fi'
 pacman -S dialog wpa_supplicant --noconfirm 
