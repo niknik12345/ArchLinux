@@ -28,14 +28,15 @@ echo 'создайте 3 раздела 1-boot/2-root/3-swap'
 
 echo '2.4.2 Форматирование дисков'
 #mkfs.ext2  /dev/sda1 -L boot
-mkfs.ext4  /dev/sda1 -L root
-mkswap /dev/sda2 -L swap
+mkfs.ext4  /dev/sda3 -L root
+mkfs.ext4  /dev/sda5 -L home
+mkswap /dev/sda4 -L swap
 
 echo '2.4.3 Монтирование дисков'
-mount /dev/sda1 /mnt
-mkdir /mnt/boot
+mount /dev/sda3 /mnt
+mount /dev/sda5 /mnt/home
 #mount /dev/sda1 /mnt/boot
-swapon /dev/sda2
+swapon /dev/sda4
 
 echo '3.1 Выбор зеркал для загрузки.'
 rm -rf /etc/pacman.d/mirrorlist
